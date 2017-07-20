@@ -205,9 +205,9 @@ if ($data['result'] == 'success') {
     }
 
     // отправляем письмо
-    /*if (!$mail->send()) {
+    if (!$mail->send()) {
         $data['result'] = 'error';
-    }*/
+    }
 
     // информируем пользователя по email о доставке
     if (isset($email)) {
@@ -223,7 +223,7 @@ if ($data['result'] == 'success') {
         $mail->Subject = MAIL_SUBJECT_CLIENT;
         $mail->Body = $bodyMail;
         $mail->addAddress($email);
-        //$mail->send();
+        $mail->send();
     }
 }
 
